@@ -59,7 +59,8 @@ RUN npm -v
 
 # install lux ai
 
-RUN npm i -g @lux-ai/2021-challenge@latest
+RUN npm install -g @lux-ai/2021-challenge@latest
+# RUN chown -R $USER:$USER /usr/local/lib/node_modules/@lux-ai/
 
 # install tooling for other languages
 
@@ -89,3 +90,9 @@ WORKDIR /lux_ai
 COPY requirements.txt /lux_ai
 RUN ls /lux_ai
 RUN pip3 install -r /lux_ai/requirements.txt
+RUN chown -R $USER:$USER /usr/local/
+
+# Monkey patch lux_ai runner
+RUN mkdir -p /lux_ai/infra
+COPY infra/monkey_patch_luxai.py /lux_ai/infra/monkey_patch_luxai.py
+RUN python3 /lux_ai/infra/monkey_patch_luxai.py

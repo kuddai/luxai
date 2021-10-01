@@ -1,0 +1,99 @@
+.TileStats {
+  overflow-y: auto;
+  max-height: calc(100vh - 8rem);
+}
+.TileStats .LuxCard {
+  width: 24rem;
+}
+.TileStats .LuxCard .title {
+  margin-bottom: 0;
+}
+.TileStats .sub-header {
+  font-weight: 500;
+  font-size: 1.75rem;
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 0rem;
+}
+.TileStats .sub-header .coords-label {
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+.TileStats .sub-header span {
+  padding: 0.75rem;
+  border-radius: 1rem;
+  display: inline-block;
+  background-color: rgba(50, 61, 52, 0.1);
+}
+.TileStats .subtitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.TileStats .subtitle:before {
+  transform: translate(10%, 2rem);
+  display: block;
+  content: '';
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(50, 61, 52, 0.2) 51.04%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  height: 0.325rem;
+  width: calc(80%);
+}
+.TileStats .resources {
+  font-size: 1rem;
+  align-items: center;
+  font-weight: 500;
+  width: calc(100% - 8rem);
+  margin-left: 4rem;
+  margin-bottom: 0.25rem;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(50, 61, 52, 0.1) 51.04%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.TileStats .tile-pos {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.TileStats .resources .resource-icon {
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+  height: 1.5rem;
+  margin-top: 0.25rem;
+  vertical-align: middle;
+}
+.TileStats .resources .resource-name {
+  text-transform: capitalize;
+}
+.TileStats .resources .resource-name,
+.TileStats .resources .resource-amount {
+  font-weight: 500;
+  line-height: 2rem;
+}
+.TileStats .resources .resource-icon-wrapper {
+  float: right;
+}
+.TileStats .resources .resource-amount {
+  float: right;
+}
+
+.TileStats .roadlevel {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 4rem;
+  width: calc(100% - 8rem);
+}
+.TileStats .roadlevel p span {
+  float: right;
+}
+
+.TileStats .tracked-unit-card .UnitCard {
+  background-color: rgba(255, 255, 255, 0.1);
+}

@@ -1,0 +1,47 @@
+43a44,52
+> // replay list api
+> function api(path: string) {
+>   if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+>     return 'http://localhost:5000' + path;
+>   } else {
+>     return path;
+>   }
+> }
+> 
+46a56
+>   const [replayList, setReplayList] = useState<string[]>([]);
+93a104,124
+>   async function loadReplay(path: string) {
+>     setUploading(true);
+>     setUseKaggleReplay(false);
+>     const response = await fetch(api('/api/v1/replay/' + path));
+>     const json =  await response.json();
+>     setUploading(false);
+>     const data = parseReplayData(json);
+>     loadGame(data);
+>   }
+> 
+>   async function loadReplays() {
+>     const response = await fetch(api('/api/v1/replay'));
+>     const json =  await response.json();
+>     setReplayList(json);
+>   }
+> 
+>   // load all 
+>   useEffect(() => {
+>     loadReplays();
+>   }, []);
+> 
+470a502,513
+>             </div>
+>             <p className="replay-header">Replays From '/replays' Folder</p>
+>             <div className="replay-list">
+>               {replayList.map((replayPath) => (
+>                 <div
+>                   className="replay-link"
+> 									onClick={() => loadReplay(replayPath)}
+> 									key={replayPath}
+> 								>
+>                   {replayPath}
+>                 </div>
+>               ))}

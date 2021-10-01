@@ -19,6 +19,8 @@ start() {
     -it \
     --gpus all \
     -v /tmp/lux_ai:/tmp/lux_ai \
+    -v /tmp/replays:/tmp/replays \
+    -v /tmp/tb_logs:/tmp/tb_logs \
     -v `pwd`:/lux_ai \
     -p 8888:8888 \
     -p 0.0.0.0:6006:6006 \
